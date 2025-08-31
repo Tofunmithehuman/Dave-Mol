@@ -82,7 +82,7 @@
               {/* Desktop Menu */}
               <ul className="md:flex gap-4 me-2 bricolage-grotesque hidden">
                 {menuItems.map((item) => (
-                  <li key={item} className="cursor-pointer hover:opacity-70 transition-opacity">
+                  <li key={item} className="cursor-pointer text-gray-200 font-semibold hover:opacity-70 transition-opacity">
                     {item}
                   </li>
                 ))}

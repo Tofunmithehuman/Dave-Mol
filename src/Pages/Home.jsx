@@ -1,17 +1,26 @@
+import { Link } from "react-router-dom";
 import Navigation from "../Component/Navigation";
 import Hero from "../assets/Hero.jpg";
-import { motion, useScroll, useTransform } from "framer-motion";
+import HeroTwo from "../assets/HeroTwo.jpg";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const Home = () => {
   const containerRef = useRef(null);
+  const secondSectionRef = useRef(null);
+  
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
+  });
+
+  // Check if second section is in view
+  const isSecondSectionInView = useInView(secondSectionRef, {
+    once: true,
+    amount: 0.3
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
-  
   const opacity = useTransform(scrollYProgress, [0, 0.8, 1], [1, 0.3, 0]);
 
   const textVariants = {
@@ -34,6 +43,73 @@ const Home = () => {
     hidden: {
       opacity: 0,
       y: 30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Animation variants for second section
+  const secondSectionVariants = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const leftContentVariants = {
+    hidden: {
+      opacity: 0,
+      x: -50,
+      y: 30,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const rightContentVariants = {
+    hidden: {
+      opacity: 0,
+      x: 50,
+      scale: 0.9,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const textItemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
     },
     visible: {
       opacity: 1,
@@ -71,11 +147,11 @@ const Home = () => {
               animate="visible"
             >
               <motion.h1
-                className="text-5xl md:text-6xl lg:text-7xl text-white font-bold leading-tight mb-8"
+                className="text-4xl md:text-6xl lg:text-7xl text-white font-bold leading-tight mb-8"
                 variants={itemVariants}
               >
-                Luxury fashion brand offering timeless elegance & sophisticated
-                style.
+                Dave Mol Luxury fashion brand offering timeless elegance and
+                sophisticated style
               </motion.h1>
 
               <motion.div variants={itemVariants}>
@@ -88,14 +164,66 @@ const Home = () => {
         </div>
       </div>
 
-      <section className="h-screen bg-black/70 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Next Section
-          </h2>
-          <p className="text-gray-400 text-xl">
-            Your second section content goes here
-          </p>
+      <section 
+        ref={secondSectionRef}
+        className="h-screen bg-black/90 flex items-center"
+      >
+        <div className="max-w-6xl mx-auto md:py-20 px-4 ysabeau">
+          <motion.div 
+            className="flex flex-col lg:flex-row gap-8 items-center"
+            variants={secondSectionVariants}
+            initial="hidden"
+            animate={isSecondSectionInView ? "visible" : "hidden"}
+          >
+            <motion.div 
+              className="lg:w-1/2 flex flex-col justify-center h-full"
+              variants={leftContentVariants}
+            >
+              <motion.h1 
+                className="text-white text-4xl md:text-6xl font-semibold mb-4"
+                variants={textItemVariants}
+              >
+                Who is Dave Mol?
+              </motion.h1>
+              <motion.p 
+                className="text-lg text-gray-100 leading-relaxed mb-6"
+                variants={textItemVariants}
+              >
+                Dave Mol, a talented fashion designer based in Lekki Phase 1,
+                Nigeria, is making waves in the industry with his innovative and
+                bespoke creations. As the creative force behind Dave Mol
+                Bespoke, he has carved a niche for himself by blending
+                contemporary aesthetics with timeless craftsmanship. His work
+                reflects a deep understanding of style, culture, and
+                individuality, catering to clients who seek unique, tailored
+                designs. Mol's journey in fashion began with a passion for
+                creating garments that tell a story. His designs often
+                incorporate bold silhouettes and a fusion of modern and
+                traditional elements, appealing to a diverse clientele.
+              </motion.p>
+
+              <motion.div variants={textItemVariants}>
+                <Link 
+                  target="_blank" 
+                  to="https://www.instagram.com/_davemol" 
+                  className="inline-block bg-white text-black px-8 py-3 rounded text-2xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
+                >
+                  View Socials
+                </Link>
+              </motion.div>
+            </motion.div>
+            
+            <motion.div 
+              className="lg:w-1/2 flex justify-center items-center"
+              variants={rightContentVariants}
+            >
+              <img
+                src={HeroTwo}
+                alt="Designs"
+                className="max-w-full h-auto object-contain rounded-lg shadow-lg"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </div>
