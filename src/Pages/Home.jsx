@@ -8,7 +8,7 @@ import { useRef } from "react";
 const Home = () => {
   const containerRef = useRef(null);
   const secondSectionRef = useRef(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -17,7 +17,7 @@ const Home = () => {
   // Check if second section is in view
   const isSecondSectionInView = useInView(secondSectionRef, {
     once: true,
-    amount: 0.3
+    amount: 0.3,
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 2.5]);
@@ -164,29 +164,29 @@ const Home = () => {
         </div>
       </div>
 
-      <section 
+      <section
         ref={secondSectionRef}
-        className="h-screen bg-black/90 flex items-center"
+        className="min-h-screen h-auto lg:h-screen bg-black/90 flex items-center py-10 lg:py-0"
       >
-        <div className="max-w-6xl mx-auto md:py-20 px-4 ysabeau">
-          <motion.div 
-            className="flex flex-col lg:flex-row gap-8 items-center"
+        <div className="max-w-6xl mx-auto px-4 ysabeau w-full">
+          <motion.div
+            className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center h-full"
             variants={secondSectionVariants}
             initial="hidden"
             animate={isSecondSectionInView ? "visible" : "hidden"}
           >
-            <motion.div 
-              className="lg:w-1/2 flex flex-col justify-center h-full"
+            <motion.div
+              className="w-full lg:w-1/2 flex flex-col justify-center order-2 lg:order-1"
               variants={leftContentVariants}
             >
-              <motion.h1 
-                className="text-white text-4xl md:text-6xl font-semibold mb-4"
+              <motion.h1
+                className="text-white text-3xl sm:text-4xl lg:text-6xl font-semibold mb-4 lg:mb-6"
                 variants={textItemVariants}
               >
                 Who is Dave Mol?
               </motion.h1>
-              <motion.p 
-                className="text-lg text-gray-100 leading-relaxed mb-6"
+              <motion.p
+                className="text-base sm:text-lg text-gray-100 leading-relaxed mb-6 lg:mb-8"
                 variants={textItemVariants}
               >
                 Dave Mol, a talented fashion designer based in Lekki Phase 1,
@@ -203,24 +203,24 @@ const Home = () => {
               </motion.p>
 
               <motion.div variants={textItemVariants}>
-                <Link 
-                  target="_blank" 
-                  to="https://www.instagram.com/_davemol" 
-                  className="inline-block bg-white text-black px-8 py-3 rounded text-2xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
+                <Link
+                  target="_blank"
+                  to="https://www.instagram.com/_davemol"
+                  className="inline-block bg-white text-black px-6 py-3 lg:px-8 rounded text-lg lg:text-2xl font-semibold hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105"
                 >
                   View Socials
                 </Link>
               </motion.div>
             </motion.div>
-            
-            <motion.div 
-              className="lg:w-1/2 flex justify-center items-center"
+
+            <motion.div
+              className="w-full lg:w-1/2 flex justify-center items-center order-1 lg:order-2"
               variants={rightContentVariants}
             >
               <img
                 src={HeroTwo}
                 alt="Designs"
-                className="max-w-full h-auto object-contain rounded-lg shadow-lg"
+                className="w-full max-w-md lg:max-w-full h-auto object-contain rounded-lg shadow-lg"
               />
             </motion.div>
           </motion.div>
