@@ -70,12 +70,12 @@ function Contact() {
                 }`}
               >
                 <h1 className="text-4xl uppercase mb-4">Get to know mola</h1>
-                <p className="font-thin max-w-lg">Further case studies available upon request. Please provide some information on your project or goals and we’ll move the conversation on from there.</p>
+                <p className="font-thin max-w-lg">Please provide some information on your project or goals and we’ll move the conversation on from there.</p>
 
                 <div className="flex items-center gap-2 mt-4">
-                  <Link to="https://wa.me/1234567890" target="_blank"><img src={whatsapp} alt="whatsapp" className="w-8" /></Link>
+                  <Link to="https://www.instagram.com/_davemol" target="_blank"><img src={whatsapp} alt="whatsapp" className="w-8" /></Link>
                   <Link to='https://www.instagram.com/_davemol' target="_blank"><Instagram /></Link>
-                  <Link to="https://x.com/davemol" target="_blank"><img src={x} alt="x" className="w-8" /></Link>
+                  <Link to="https://www.instagram.com/_davemol" target="_blank"><img src={x} alt="x" className="w-8" /></Link>
                 </div>
               </div>
               <div 

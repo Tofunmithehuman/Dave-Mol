@@ -227,7 +227,7 @@ function Home() {
                 }`}
             >
               <h1 className="uppercase text-5xl mb-4  ">Want to get in touch</h1>
-              <p className="mb-8 font-thin">We’re always looking for new opportunities and are comfortable working internationally. Please get in touch and one of our project managers will contact you about beginning the proposal process.</p>
+              <p className="mb-8 font-thin">We’re always looking for new opportunities and are comfortable working internationally. Please get in touch and one of our customer representative will contact you about beginning the process.</p>
               <div>
                 <Link to="/contact" className="bg-white hover:bg-white/90 duration-300 px-6 py-2 text-[#28292b]">Contact Us</Link>
               </div>
