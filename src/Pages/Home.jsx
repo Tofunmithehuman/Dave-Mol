@@ -138,7 +138,7 @@ function Home() {
           <div className="max-w-screen-2xl m-auto px-10 py-8">
             <h1
               ref={headingRef}
-              className={`text-4xl md:text-6xl leading-14 md:leading-18 uppercase transition-all duration-1000 ease-out ${isHeadingVisible
+              className={`text-4xl font-bold md:text-6xl leading-14 md:leading-18 uppercase transition-all duration-1000 ease-out ${isHeadingVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
                 }`}
@@ -148,7 +148,7 @@ function Home() {
 
             <h1
               ref={headingRef}
-              className={`text-3xl md:text-6xl leading-14 md:leading-18 uppercase transition-all duration-1000 ease-out ${isHeadingVisible
+              className={`text-3xl font-base md:text-6xl leading-14 md:leading-18 uppercase transition-all duration-1000 ease-out ${isHeadingVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
                 }`}
