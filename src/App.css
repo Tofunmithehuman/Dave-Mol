@@ -1,17 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@0,1..1000;1,1..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
-.bricolage-grotesque {
-  font-family: "Bricolage Grotesque", serif;
-}
 
-.ysabeau {
-  font-family: "Ysabeau", sans-serif;
-}
-
-.glass {
-    background: rgba(0, 0, 0, 0.252);
-    backdrop-filter: blur(10px) brightness(1.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+* {
+    font-family: "Outfit", sans-serif;
 }
