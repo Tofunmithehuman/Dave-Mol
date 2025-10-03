@@ -138,12 +138,22 @@ function Home() {
           <div className="max-w-screen-2xl m-auto px-10 py-8">
             <h1
               ref={headingRef}
+              className={`text-4xl md:text-6xl leading-14 md:leading-18 uppercase transition-all duration-1000 ease-out ${isHeadingVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-12'
+                }`}
+            >
+              David Mola.
+            </h1>
+
+            <h1
+              ref={headingRef}
               className={`text-3xl md:text-6xl leading-14 md:leading-18 uppercase transition-all duration-1000 ease-out ${isHeadingVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-12'
                 }`}
             >
-              David Mola. <br /> Nigerian fashion designer redefining contemporary style from the vibrant streets of Lagos.
+              Nigerian fashion designer redefining contemporary style from the vibrant streets of Lagos.
             </h1>
           </div>
           <div className="relative min-h-screen overflow-hidden">
@@ -181,7 +191,7 @@ function Home() {
                 }`}
             >
               <h1 className="text-5xl mb-4">Recent Work</h1>
-<p className="text-black/80 font-thin">David Mola's practice spans from bespoke tailoring for discerning clients to the creation of ready-to-wear collections inspired by the vibrant energy of Lagos. While his designs are aesthetically diverse, his projects are united by a focus on empowering individuality and cultural expression through fashion.</p>            </div>
+              <p className="text-black/80 font-thin">David Mola's practice spans from bespoke tailoring for discerning clients to the creation of ready-to-wear collections inspired by the vibrant energy of Lagos. While his designs are aesthetically diverse, his projects are united by a focus on empowering individuality and cultural expression through fashion.</p>            </div>
 
             <div
               ref={galleryRef}
@@ -211,11 +221,10 @@ function Home() {
           <div className="max-w-screen-2xl m-auto px-4 sm:px-10 py-30">
             <div
               ref={thirdSectionRef}
-              className={`max-w-2xl transition-all duration-1000 ease-out ${
-                isThirdSectionVisible
+              className={`max-w-2xl transition-all duration-1000 ease-out ${isThirdSectionVisible
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-12'
-              }`}
+                }`}
             >
               <h1 className="uppercase text-5xl mb-4  ">Want to get in touch</h1>
               <p className="mb-8 font-thin">We’re always looking for new opportunities and are comfortable working internationally. Please get in touch and one of our project managers will contact you about beginning the proposal process.</p>
