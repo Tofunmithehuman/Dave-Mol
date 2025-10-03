@@ -73,9 +73,9 @@ function Contact() {
                 <p className="font-thin max-w-lg">Please provide some information on your project or goals and we’ll move the conversation on from there.</p>
 
                 <div className="flex items-center gap-2 mt-4">
-                  <Link to="https://www.instagram.com/_davemol" target="_blank"><img src={whatsapp} alt="whatsapp" className="w-8" /></Link>
+                  <Link to="https://wa.me/2349034350247" target="_blank"><img src={whatsapp} alt="whatsapp" className="w-8" /></Link>
                   <Link to='https://www.instagram.com/_davemol' target="_blank"><Instagram /></Link>
-                  <Link to="https://www.instagram.com/_davemol" target="_blank"><img src={x} alt="x" className="w-8" /></Link>
+                  {/* <Link to="https://www.instagram.com/_davemol" target="_blank"><img src={x} alt="x" className="w-8" /></Link> */}
                 </div>
               </div>
               <div 
